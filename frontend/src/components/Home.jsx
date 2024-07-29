@@ -19,11 +19,12 @@ const Home = () => {
   const ratings = searchParams.get("ratings");
   const params = { page, keyword };
 
-  const { data, isLoading, error, isError } = useGetProductsQuery(params);
+ 
   min !== null && (params.min = min);
   max !== null && (params.max = max);
   category !== null && (params.category = category);
   ratings !== null && (params.ratings = ratings);
+  const { data, isLoading, error, isError } = useGetProductsQuery(params); 
 
   useEffect(() => {
     if (isError) {
@@ -36,21 +37,20 @@ const Home = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <>
+    < >
       <MetaData title={"Buy Best Products Online"} />
-      <div className="row">
+      <div className="row "  >
         {keyword && (
           <div className="col-6 col-md-3 mt-5">
             <Filters />
           </div>
         )}
-        <div className={keyword ? "col-6 col-md-9" : "col-6 col-md-12"}>
+        <div className={keyword ? "col-6 col-md-9" : "col-6 col-md-12" }  >
           <h1 id="products_heading" className="text-secondary">
             {keyword ? `${data?.products?.length} Products found with this keyword: ${keyword}` : "Latest Products"}
           </h1>
-
-          <section id="products" className="mt-5">
-            <div className="row">
+          <section id="products" className="mt-5" >
+            <div className="row " >
               {data?.products?.map((product) => (
                 <ProductItem product={product } columnSize={columnSize} />
               ))}

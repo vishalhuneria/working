@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getPriceQueryParams } from "../../helpers/helpers";
-// import { PRODUCT_CATEGORIES } from "../../constants/constants";
+import { PRODUCT_CATEGORIES } from "../../constants/constants";
 import StarRatings from "react-star-ratings";
-import { PRODUCT_CATEGORIES } from "../constants/constants";
-// import { PRODUCT_CATEGORIES } from "./constants/constants";
 
 const Filters = () => {
   const [min, setMin] = useState(0);
@@ -53,7 +51,6 @@ const Filters = () => {
 
     searchParams = getPriceQueryParams(searchParams, "min", min);
     searchParams = getPriceQueryParams(searchParams, "max", max);
-
     const path = window.location.pathname + "?" + searchParams.toString();
     navigate(path);
   };

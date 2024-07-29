@@ -4,14 +4,10 @@ import ErrorHandler from "../utils/errorHandlers.js";
 import catchAsyncErrors from "../middlewares/catchAsyncErrors.js";
 import APIFilters from "../utils/apiFliters.js"
 
-// show Create new Product   =>  /api/v1/products
-export const getProducts = catchAsyncErrors(async (req, res) => {
+// Create new Product   =>  /api/v1/products
+export const getProducts = catchAsyncErrors(async (req, res, next) => {
   const resPerPage = 4;
   const apiFilters = new APIFilters(Product, req.query).search().filters();
-
-  console.log(req.user);
-
-  // return next( new ErrorHandler("hello",400))
 
   let products = await apiFilters.query;
   let filteredProductsCount = products.length;

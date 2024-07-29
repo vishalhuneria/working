@@ -6,6 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  background-color: #eeeeee;
 }
 
 /* Scroll Bar */
@@ -27,7 +28,7 @@ body {
 }
 
 nav {
-  background-color: #232f3e;
+  background-color:#131a22;
   padding: 1rem 1rem;
 }
 
@@ -79,7 +80,7 @@ nav {
 
 /* Home page */
 #products_heading {
-  margin-top: 1.8rem;
+  margin-top: 1.6rem;
 }
 
 .card {
@@ -121,6 +122,7 @@ nav {
 
 .App {
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
 }
