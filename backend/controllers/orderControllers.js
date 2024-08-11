@@ -198,7 +198,7 @@ export const getSales = catchAsyncErrors(async (req, res, next) => {
     endDate
   );
 
-  sres.status(200).json({
+  res.status(200).json({
     totalSales,
     totalNumOrders,
     sales: salesData,
