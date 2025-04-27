@@ -43,7 +43,7 @@ const Dashboard = () => {
             <MetaData title={"Admin Products"} />
             <div className="d-flex justify-content-start align-items-center">
                 <div className="mb-3 me-4">
-                    <label className="form-label d-block">Start Date</label>
+                    <label className="form-label d-block">Start Date : </label>
                     <DatePicker
                         selected={startDate}
                         onChange={(date) => setStartDate(date)}
